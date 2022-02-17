@@ -1,0 +1,31 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: SQLServer2019
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Passw0rd.
+      MSSQL_PID: Express
+    volumes:
+      - C:\Users\a842225\Source\Repos\finalProyect\WebBackEndLibrary\DB\data:/var/opt/mssql/data
+      - C:\Users\a842225\Source\Repos\finalProyect\WebBackEndLibrary\DB\secrets:/var/opt/mssql/secrets
+      - C:\Users\a842225\Source\Repos\finalProyect\WebBackEndLibrary\DB\log:/var/opt/mssql/log
+    healthcheck:
+      test: ["CMD", "sqlcmd", "-S", "localhost", "-U", "sa", "-P", "Passw0rd.", "-Q", "SELECT 1", "||", "exit", "1"]
+      interval: 40s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+
+  #courseservices:
+    #image: ashleyatos/course-services:v1
+    #container_name: course-service
+    #ports:
+    #  - 5002:5001
+    #depends_on:
+    #  - sqlserver
+    
+    
+   

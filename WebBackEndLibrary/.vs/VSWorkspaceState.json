@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\Controllers",
+    "\\src\\Dtos",
+    "\\src\\Mapper",
+    "\\src\\Models",
+    "\\src\\Repositories",
+    "\\src\\Repositories\\Implementation",
+    "\\src\\Services",
+    "\\src\\Services\\Implementation"
+  ],
+  "SelectedNode": "\\WebBackEndLibrary.csproj",
+  "PreviewInSolutionExplorer": false
+}
